@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GabayApp — Karla B. Sison</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+<main class="project-page">
+
+  <div class="pp-hero">
+    <div class="pp-logo-wrap">
+      <img src="assets/gabay_logo.png" alt="Gabay logo">
+    </div>
+    <div class="pp-hero-text">
+      <p class="pp-label">Group Capstone · New Era University · 2025 – 2026</p>
+      <h1 class="pp-title">Gabay</h1>
+      <p class="pp-subtitle">An Android app for disaster evacuation guidance in the Philippines</p>
+      <div class="pp-tags">
+        <span class="pp-tag">Android</span>
+        <span class="pp-tag">Kotlin</span>
+        <span class="pp-tag">MVVM</span>
+        <span class="pp-tag">OsmDroid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp-divider"></div>
+
+  <div class="pp-media">
+    <p class="pp-media-label">// walkthrough</p>
+    <div class="pp-video-wrap">
+        <center><img src="assets/gabay_demo.gif" height="500px" alt="Gabay walkthrough"></center>
+    </div>
+  </div>
+    <p class="pp-callout-label">
+        <br>// Note: the demo location is simulated.
+    </p>
+  <div class="pp-divider"></div>
+
+  <!-- ABOUT -->
+  <div class="pp-section">
+    <h2 class="pp-section-heading">About</h2>
+    <p class="pp-body">
+      Gabay is the Android companion to the LifelineTech disaster preparedness web platform. It finds the
+      nearest evacuation centers around the user and routes them to one, so they don't have to search the
+      web while a disaster is happening.
+    </p>
+    <p class="pp-body">
+      It draws on a bundled dataset of 1,600+ evacuation centers across the
+      Philippines, fetches recent earthquake data, and keeps working in a limited way when the
+      internet doesn't. I developed the app with AI assistance.
+    </p>
+  </div>
+
+  <!-- KEY FEATURES -->
+  <div class="pp-section">
+    <h2 class="pp-section-heading">Key Features</h2>
+    <ul class="pp-feature-list">
+      <li>
+        <span class="pp-feature-icon">◎</span>
+        <div>
+          <strong>Evacuation Routing with Fallbacks</strong>
+          <p>Routes the user to the nearest evacuation center through a four-step fallback chain: two Valhalla servers, then OSRM, then straight-line routing that needs no internet.</p>
+        </div>
+      </li>
+      <li>
+        <span class="pp-feature-icon">◎</span>
+        <div>
+          <strong>"Path is Blocked?" Rerouting</strong>
+          <p>A button that redirects the user to a new route or to another evacuation center, like rerouting after a wrong turn in a navigation app. Cycles through up to 5 alternate centers.</p>
+        </div>
+      </li>
+      <li>
+        <span class="pp-feature-icon">◎</span>
+        <div>
+          <strong>Live ETA Tracking</strong>
+          <p>The estimated time of arrival updates every 3 seconds while the user is navigating.</p>
+        </div>
+      </li>
+      <li>
+        <span class="pp-feature-icon">◎</span>
+        <div>
+          <strong>Recent Earthquake Data</strong>
+          <p>Fetches recent earthquake data from the USGS API within a set radius of the user.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- LIMITATIONS -->
+  <div class="pp-section">
+    <h2 class="pp-section-heading">Known Limitations</h2>
+    <div class="pp-callout">
+      <p class="pp-callout-label">// honest scope</p>
+      <p>
+        Online routing needs an internet connection. When every source fails, the straight-line fallback
+        takes over, but it doesn't follow actual roads. Evacuation center data is bundled at build time,
+        so it isn't updated in real time, and the app is tuned for Metro Manila, where routing accuracy
+        depends on Valhalla and OSRM coverage. The app sends no alerts: the earthquake feed shows recent
+        events, not real-time warnings (during testing it surfaced a quake from over two weeks earlier),
+        and typhoon data is not currently fetched.
+      </p>
+    </div>
+  </div>
+
+  <!-- SOURCE -->
+  <div class="pp-section">
+    <h2 class="pp-section-heading">Source Code</h2>
+    <div class="pp-download-row">
+      <a href="https://github.com/floppy-cheese/GabayApp" target="_blank" rel="noopener" class="pp-download-btn">
+        View source and README on GitHub
+      </a>
+      <p class="pp-download-note">Includes the routing architecture, data sources, and future work.</p>
+    </div>
+  </div>
+
+  <!-- STACK -->
+  <div class="pp-section">
+    <h2 class="pp-section-heading">Tech Stack</h2>
+    <div class="pp-stack-grid">
+      <div class="pp-stack-item"><span>Kotlin</span></div>
+      <div class="pp-stack-item"><span>Android Studio</span></div>
+      <div class="pp-stack-item"><span>MVVM · LiveData</span></div>
+      <div class="pp-stack-item"><span>OsmDroid</span></div>
+      <div class="pp-stack-item"><span>Retrofit · OkHttp</span></div>
+      <div class="pp-stack-item"><span>Valhalla · OSRM</span></div>
+      <div class="pp-stack-item"><span>Git · GitHub</span></div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
